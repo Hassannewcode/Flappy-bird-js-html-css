@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background: #70c5ce;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  border: 3px solid #000;
+  image-rendering: pixelated;
+  margin: 10px 0;
+}
+
+.menu, #gameOverScreen {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.title-img {
+  width: 180px;
+  image-rendering: pixelated;
+}
+
+.btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 12px;
+  background: #ffd500;
+  border: 3px solid #000;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#instructions p {
+  font-size: 10px;
+  color: #fff;
+}

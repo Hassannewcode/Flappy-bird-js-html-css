@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flappy Birdoo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="menu" class="menu">
+    <img src="https://raw.githubusercontent.com/sourabhv/FlapPyBird/master/assets/sprites/title.png" alt="Flappy Birdoo" class="title-img" />
+    <button id="startBtn" class="btn">Start Game</button>
+    <button id="howToBtn" class="btn">How To Play</button>
+    <button id="autoplayBtn" class="btn">Toggle Autoplay: OFF</button>
+    <div id="instructions" class="hidden">
+      <p>Press SPACE/UP or tap to flap and avoid the pipes!</p>
+      <p>Score points by passing pipes.</p>
+      <p>Try to beat your high score!</p>
+    </div>
+  </div>
+
+  <canvas id="gameCanvas" width="288" height="512"></canvas>
+
+  <div id="gameOverScreen" class="hidden">
+    <img src="https://raw.githubusercontent.com/sourabhv/FlapPyBird/master/assets/sprites/gameover.png" alt="Game Over" />
+    <p id="finalScore"></p>
+    <button id="restartBtn" class="btn">Restart</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
