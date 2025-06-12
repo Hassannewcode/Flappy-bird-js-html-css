@@ -91,12 +91,12 @@
       pipe: loadImg("pipe-green.png"),
       gameover: loadImg("gameover.png"),
       title: loadImg("title.png"),
-      birdFrames: ["upflap", "midflap", "downflap"].map(i => loadImg(`yellowbird-${i}.png`))
+      birdFrames: ["upflap", "midflap", "downflap"].map(i => loadImg(yellowbird-${i}.png))
     };
 
     function loadImg(name) {
       const img = new Image();
-      img.src = `https://raw.githubusercontent.com/sourabhv/FlapPyBird/master/assets/sprites/${name}`;
+      img.src = https://raw.githubusercontent.com/sourabhv/FlapPyBird/master/assets/sprites/${name};
       return img;
     }
 
@@ -115,7 +115,7 @@
       ctx.drawImage(bf, bird.x, bird.y);
       ctx.fillStyle = "#fff";
       ctx.font = "20px 'Press Start 2P'";
-      ctx.fillText(score * 20, 10, 25);  // 20x multiplier here
+      ctx.fillText(score, 10, 25);
     }
 
     function update() {
@@ -133,8 +133,7 @@
 
         pipes.forEach(p => p.x -= BASE_SPEED + frame * SPEED_ACCEL);
         if (pipes.length && pipes[0].x < -PIPE_WIDTH) {
-          pipes.shift(); 
-          score++;
+          pipes.shift(); score++;
         }
         if (frame % PIPE_INTERVAL === 0) {
           const y = Math.random() * (BASE_Y - PIPE_GAP - 40) + 40;
@@ -168,7 +167,7 @@
     };
     document.getElementById("autoplayBtn").onclick = () => {
       autoplay = !autoplay;
-      document.getElementById("autoplayBtn").textContent = `Toggle Autoplay: ${autoplay ? "ON" : "OFF"}`;
+      document.getElementById("autoplayBtn").textContent = Toggle Autoplay: ${autoplay ? "ON" : "OFF"};
     };
 
     function startGame() {
@@ -183,14 +182,13 @@
     function endGame() {
       gameOver = true;
       document.getElementById("gameOverScreen").classList.remove("hidden");
-      document.getElementById("finalScore").textContent = `Final Score: ${score * 1}`; // multiplier here
+      document.getElementById("finalScore").textContent = Final Score: ${score};
       ctx.drawImage(images.gameover, (canvas.width - images.gameover.width) / 2, canvas.height / 2 - 50);
     }
 
     function loop() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      draw(); 
-      update();
+      draw(); update();
     }
 
     startGame();
