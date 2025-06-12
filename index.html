@@ -115,7 +115,7 @@
       ctx.drawImage(bf, bird.x, bird.y);
       ctx.fillStyle = "#fff";
       ctx.font = "20px 'Press Start 2P'";
-      ctx.fillText(score * 20, 10, 25);  // 20x multiplier here
+      ctx.fillText(score, 10, 25);
     }
 
     function update() {
@@ -133,8 +133,7 @@
 
         pipes.forEach(p => p.x -= BASE_SPEED + frame * SPEED_ACCEL);
         if (pipes.length && pipes[0].x < -PIPE_WIDTH) {
-          pipes.shift(); 
-          score++;
+          pipes.shift(); score++;
         }
         if (frame % PIPE_INTERVAL === 0) {
           const y = Math.random() * (BASE_Y - PIPE_GAP - 40) + 40;
@@ -183,14 +182,13 @@
     function endGame() {
       gameOver = true;
       document.getElementById("gameOverScreen").classList.remove("hidden");
-      document.getElementById("finalScore").textContent = `Final Score: ${score * 20}`; // 20x multiplier here
+      document.getElementById("finalScore").textContent = `Final Score: ${score}`;
       ctx.drawImage(images.gameover, (canvas.width - images.gameover.width) / 2, canvas.height / 2 - 50);
     }
 
     function loop() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      draw(); 
-      update();
+      draw(); update();
     }
 
     startGame();
